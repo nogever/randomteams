@@ -51,13 +51,13 @@ class Users extends CI_Controller {
 			}
 		}
 		
-		// calculate the average players score per team
+		// calculate the total players rankings
 		foreach ($teams as $team) {
 			$score = 0;
 			foreach ($team->_players as $p) {
 				$score = $p['ranking'] + $score;
 			}
-			$team->_players_score = $score / count($team->_players);
+			$team->_players_score = $score;
 		}
 		
 		$data['teams'] = $teams;

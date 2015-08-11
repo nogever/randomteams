@@ -32,7 +32,7 @@
         foreach ($teams as $team) {
 			echo '<div class="team">';
             echo '<h3>Team ' . $team->_name . '</h3>';
-			echo '<p>Ranking: ' . number_format($team->_players_score, 1, '.', '') . '</p>';			
+			echo '<p>Total Rankings: ' . number_format($team->_players_score, 0, '.', '') . '</p>';			
 			echo '<ul class="players">';
             foreach ($team->_players as $player) {
 				echo '<li>' . $player['last_name'] . ', ' . $player['first_name'];
