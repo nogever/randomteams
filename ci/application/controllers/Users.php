@@ -35,19 +35,17 @@ class Users extends CI_Controller {
 			}
 		}
 		
+		// assign goalies to teams
+		foreach ($goalies as $key=>$goalie) {
+			$team_key = $key % $total_number_of_teams;
+			$teams[$team_key]->_players[] = $goalie;
+		}
+		
 		// assgin players to teams
 		foreach ($players as $key=>$player) {
 			$team_key = $key % $total_number_of_teams;
 			if (count($teams[$team_key]->_players) < 22) {
 				$teams[$team_key]->_players[] = 	$player;
-			}
-		}
-		
-		// assign goalies to teams
-		foreach ($goalies as $key=>$goalie) {
-			$team_key = $key % $total_number_of_teams;
-			if (count($teams[$team_key]->_players) < 22) {
-				$teams[$team_key]->_players[] = $goalie;
 			}
 		}
 		
