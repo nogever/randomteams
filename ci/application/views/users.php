@@ -31,8 +31,8 @@
         <?php
         foreach ($teams as $team) {
 			echo '<div class="team">';
-            echo '<h3>Team ' . $team->_name . '</h3>';
-			echo '<p>Total Rankings: ' . number_format($team->_players_score, 0, '.', '') . '</p>';			
+			echo heading('Team ' . $team->_name, 3);
+			echo '<p>Total Rankings: ' . $team->_players_score . '</p>';			
 			echo '<ul class="players">';
             foreach ($team->_players as $player) {
 				echo '<li>' . $player['last_name'] . ', ' . $player['first_name'];
@@ -41,7 +41,8 @@
 				}
 				echo '</li>';
 			}
-			echo '</ul>';
+			//echo '</ul>';
+//			echo ul( $team->_players, array('class' => 'players'));
 			echo '</div>';
         }
         ?>
